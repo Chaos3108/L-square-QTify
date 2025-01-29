@@ -14,7 +14,7 @@ const AlbumCard = ({ data }) => {
         <Typography style={{fontFamily:'Poppins'}} variant="h6" component="div">
           {data.title} {/* Album Title */}
         </Typography>
-        <Chip style={{fontFamily:'Poppins'}} label={`${data.follows} follows`} />
+        <Chip style={{fontFamily:'Poppins' , color:'white' ,background:'black'}} label={`${data.follows} follows`} />
       </CardContent>
     </Card>
   );
