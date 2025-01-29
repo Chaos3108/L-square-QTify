@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
-    background-color: black;
+    background-color: #121212;
     width: 170px;
     height: 47px;
     padding: 10px 16px;
@@ -10,15 +10,16 @@
     border-radius: 12px;
     cursor: pointer; /* Add pointer for better UX */
     border: none; /* Remove default button border */
+    color: #34C94B;
   }
   
   .button-text {
-    font-family: 'Poppins', sans-serif; /* Ensure Poppins is used */
+    font-family: 'Poppins','Medium';
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
     letter-spacing: 0.25px;
     text-align: center;
-    color: #34C94B;
+    /* color: #34C94B; */
   }
   
