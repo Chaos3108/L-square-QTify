@@ -1,35 +1,39 @@
 .album-card {
-    height: 205px;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background: #FFFFFF;
-    width: 159px;
-  }
-  
-  .album-image {
-    height: 70%; /* Controls image-to-bottom-section ratio */
-    object-fit: cover;
-    width: 300px;
-  }
-  
-  .album-content {
-    height: 30%; /* Ensures bottom section is proportional */
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .album-name {
-    font-weight: 600;
-  }
-  
-  .album-chip {
-    background-color: #34c94b;
-    color: white;
-    font-weight: 500;
-    font-size: 14px;
-  }
-  
+  height: 205px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  width: 159px;
+}
+
+.album-image {
+  height: 70%; /* Controls image-to-bottom-section ratio */
+  object-fit: cover;
+  width: 300px;
+}
+
+.album-content {
+  height: 30%; /* Ensures bottom section is proportional */
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.album-name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.album-chip {
+  background-color: #34c94b;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
