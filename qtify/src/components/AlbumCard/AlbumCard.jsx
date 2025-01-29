@@ -19,6 +19,8 @@ const AlbumCard = ({ data }) => {
           alt={data.title}
         />
         <CardContent>
+          {data.follows? 
+          
           <Chip
             style={{
               fontFamily: "Poppins",
@@ -26,7 +28,17 @@ const AlbumCard = ({ data }) => {
               background: "black",
             }}
             label={`${data.follows} follows`}
+          />:
+            <Chip
+            style={{
+              fontFamily: "Poppins",
+              color: "white",
+              background: "black",
+            }}
+            label={`${data.likes} likes`}
           />
+          
+        }
         </CardContent>
       </Card>
       <Typography
