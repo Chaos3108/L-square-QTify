@@ -11,10 +11,12 @@
     cursor: pointer; /* Add pointer for better UX */
     border: none; /* Remove default button border */
     color: #34C94B;
+    font-family: 'Poppins','Medium';
+
   }
   
   .button-text {
-    font-family: 'Poppins','Medium';
+    /* font-family: 'Poppins','Medium'; */
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
