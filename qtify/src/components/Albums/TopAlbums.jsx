@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Grid2, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import axios from "axios";
-import AlbumCard from "../AlbumCard/AlbumCard"; // Import the custom card component
+import AlbumCard from "../AlbumCard/AlbumCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const TopAlbums = ({ topAlbums, newAlbums }) => {
+const TopAlbums = () => {
   const [data, setData] = useState([]);
+  const [newData, setNewData] = useState([]);
+
 
   const getData = async () => {
     try {
-      const response = await axios.get(
-        "https://qtify-backend-labs.crio.do/albums/top"
-      );
+      const response = await axios.get("https://qtify-backend-labs.crio.do/albums/top");
       setData(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getNewAlbums = async () => {
+    try {
+      const response = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
+      setNewData(response.data);
     } catch (e) {
       console.log(e);
     }
@@ -19,87 +32,50 @@ const TopAlbums = ({ topAlbums, newAlbums }) => {
 
   useEffect(() => {
     getData();
+    getNewAlbums();
   }, []);
 
   return (
-    <div style={{ background: "black" }}>
-      <Grid2
-        container
-        display="flex"
-        flexDirection="row"
-        justifyContent="space-between"
-        width="80%"
-        marginLeft={4}
-      >
-        <Typography
-          mb={2}
-          mt={2}
-          color={"white"}
-          variant="h5"
-          className="section-title"
-        >
-          Top Albums
-        </Typography>
-        <Typography
-          mb={4}
-          mt={2}
-          color={"#34C94B"}
-          variant="h5"
-          className="section-title"
-        >
-          Collapse
-        </Typography>
-      </Grid2>
+    <div style={{ background: "black", padding: "20px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", width: "80%", margin: "0 auto" }}>
+        <Typography fontFamily={"Poppins"} color="white" variant="h5">Top Albums</Typography>
+        <Typography fontFamily={"Poppins"} color="#34C94B" variant="h5">Show All</Typography>
+      </div>
 
-      <Grid2 container margin={4} spacing={2}>
-        {data.map((album) => (
-          <Grid2 item xs={12} sm={1} md={1} key={album.id}>
-            <AlbumCard data={album} /> {/* Pass each album separately */}
-          </Grid2>
-        ))}
-      </Grid2>
-
-      {/* New Albums Row */}
-      <Grid2
-        display={"flex"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
-        width={"80%"}
-        marginLeft={4}
-        sx={{ fontFamily: "Poppins-Medium" }}
-      >
-        <Typography
-          mb={2}
-          mt={2}
-          color={"white"}
-          variant="h5"
-          className="section-title"
-        >
-          New Albums
-        </Typography>
-        <Typography
-          mb={4}
-          mt={2}
-          color={"#34C94B"}
-          variant="h5"
-          className="section-title"
-        >
-          Collapse
-        </Typography>
-      </Grid2>
-      <Grid2
-        container
-        margin={4}
-        display={"flex"}
-        alignContent={"center"}
-        spacing={2}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={1}
+        slidesPerView={6}
+        navigation
+        pagination={{ clickable: true }}
+        style={{ padding: "10px" }}
       >
         {data.map((album) => (
-          <Grid2 item xs={12} sm={6} md={1} key={album.id}>
-            <AlbumCard data={album} /> {/* Pass each album separately */}
-          </Grid2>
+          <SwiperSlide key={album.id}>
+            <AlbumCard data={album} />
+          </SwiperSlide>
         ))}
-      </Grid2>
+      </Swiper>
+
+      <div style={{ display: "flex", justifyContent: "space-between", width: "90%", margin: "40px auto 20px" }}>
+        <Typography fontFamily={"Poppins"} color="white" variant="h5">New Albums</Typography>
+        <Typography fontFamily={"Poppins"} color="#34C94B" variant="h5">Show All</Typography>
+      </div>
+
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={5}
+        slidesPerView={6}
+        navigation
+        pagination={{ clickable: true }}
+        style={{ padding: "20px" }}
+      >
+        {newData.map((album) => (
+          <SwiperSlide key={album.id}>
+            <AlbumCard data={album} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

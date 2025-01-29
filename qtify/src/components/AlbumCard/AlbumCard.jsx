@@ -6,7 +6,7 @@ const AlbumCard = ({ data }) => {
     <>
       <Card
         sx={{
-          fontFamily: "Poppins-Medium",
+          fontFamily: "Poppins",
           height: 250,
           maxWidth: 345,
           width: 159,
