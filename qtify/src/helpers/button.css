@@ -1,0 +1,23 @@
+.button-container {
+  background-color: black;
+  width: (170px) px;
+  height: (47px) px;
+  top: 13px;
+  left: 1238px;
+  padding: 10px 16px 10px 16px;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+}
+.button-text {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #34C94B;
+}
