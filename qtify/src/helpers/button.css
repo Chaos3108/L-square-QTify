@@ -1,22 +1,24 @@
 .button-container {
-  display: flex;
-  background-color: black;
-  width: 170px;
-  height: 47px;
-  top: 13px;
-  left: 1238px;
-  padding: 10px 16px 10px 16px;
-  gap: 10px;
-  border-radius: 12px;
-}
-.button-text {
-  font-family: "Poppins";
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 27px;
-  letter-spacing: 0.25px;
-  text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #34c94b;
-}
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    background-color: black;
+    width: 170px;
+    height: 47px;
+    padding: 10px 16px;
+    gap: 10px;
+    border-radius: 12px;
+    cursor: pointer; /* Add pointer for better UX */
+    border: none; /* Remove default button border */
+  }
+  
+  .button-text {
+    font-family: 'Poppins', sans-serif; /* Ensure Poppins is used */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    color: #34C94B;
+  }
+  
